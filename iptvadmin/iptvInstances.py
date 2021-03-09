@@ -1,12 +1,8 @@
 import PySimpleGUI as sg
-# import subprocess
 import pyautogui
 import time
 
-# subprocess.call([ 'runas', '/user:Administrator', '/password:123', 'C:/Program Files/IP.TV Studio HD 518/iptv.exe' ])
-
 sg.theme('DarkGrey12')
-
 
 layout = [
     [sg.Text("Quantidade de Instâncias IPTV:", size=(23, 0)), sg.Input(size=(8, 0), key="qty")],
@@ -41,11 +37,11 @@ class IPTV():
                 pyautogui.press('enter')
 
         else:
-            pyautogui.alert('para de tentar crashar o pc')
+            pyautogui.alert('Erro. Você não pode abrir mais do que 8 instâncias IPTV.')
 
 
 if event == 'OK':
     window.Hide()
 
-    vitu = IPTV('administrador', '123')
+    vitu = IPTV('', '')
     vitu.open_instance()
